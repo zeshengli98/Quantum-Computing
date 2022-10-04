@@ -45,7 +45,7 @@ minutes_length = int(5*255*6.5*60)
 num_assets = 15000
 assets = np.zeros((num_assets,minutes_length))
 for i in range(num_assets):
-    if(i)%40 == 0:
+    if(i)%150 == 0:
         print(f"Generating asset path completed {int(i/num_assets*100)}%" )
     assets[i] = create_gbm_minute(100, 0.01, 0.2, minutes_length)
 print(f"Generating asset path completed 100%" )
