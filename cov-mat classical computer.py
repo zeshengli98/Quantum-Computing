@@ -42,7 +42,7 @@ def Function_runtime(func, *args, **kwargs):
     return result, time
 
 minutes_length = int(5*255*6.5*60)
-num_assets = 4000
+num_assets = 15000
 assets = np.zeros((num_assets,minutes_length))
 for i in range(num_assets):
     if(i)%40 == 0:
@@ -50,8 +50,8 @@ for i in range(num_assets):
     assets[i] = create_gbm_minute(100, 0.01, 0.2, minutes_length)
 print(f"Generating asset path completed 100%" )
 
-asset_easy = assets[:500,:]
-asset_medium = assets[:1500,:]
+asset_easy = assets[:2000,:]
+asset_medium = assets[:6000,:]
 asset_hard = assets
 
 easy_runtime = Function_runtime(np.cov, asset_easy)[1]
